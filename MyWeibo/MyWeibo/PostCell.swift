@@ -63,11 +63,7 @@ struct PostCell: View {
                 .font(.system(size: 17)) //字体大小
             if !post.images.isEmpty {
 //                Image(uiImage: UIImage(named: post.images[0]))
-                loadImage(name: post.images[0])
-                    .resizable()
-                    .scaledToFill() //保持宽高比填充整个空间
-                    .frame(width: UIScreen.main.bounds.width - 30, height: (UIScreen.main.bounds.width - 30) * 0.75) //设置显示宽高比4:3，width：屏幕宽度 - 左右两边的间距（30） height: 宽度 * 0.75
-                    .clipped()
+                PostImageCell(images: post.images, width: UIScreen.main.bounds.width - 30)
             }
             //增加分割线
             Divider()
@@ -98,10 +94,8 @@ struct PostCell: View {
                 .frame(height: 10)
                 .foregroundColor(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255))
         }
-        .padding(.horizontal, 15) //设置VStack和屏幕两边的间距为15
-        .padding(.top, 15) //添加上部间距
-        
-
+        .padding(.horizontal, 10) //设置VStack和屏幕两边的间距为15
+        .padding(.top, 10) //添加上部间距
     }
 }
 
