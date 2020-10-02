@@ -56,8 +56,8 @@ extension Post {
 
 
 
-
-let postList = loadPostListData("PostListData_recommend_1.json")
+//已经使用环境对象，全局变量弃用
+//let postList = loadPostListData("PostListData_recommend_1.json")
 
 
 

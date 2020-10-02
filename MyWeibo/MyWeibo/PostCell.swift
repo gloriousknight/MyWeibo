@@ -9,9 +9,21 @@ import SwiftUI
 
 struct PostCell: View {
     let post: Post
+    
+    var bindingPost: Post {
+        userData.post(forId: post.id)!
+    }
+    
+    @State var presentComment = false
+    
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
+        //定义局部变量post，使用bindingPost变量
+        var post = bindingPost
+        
         //增加微博详情+图片
-        VStack(alignment: .leading, spacing: 10) {
+        return VStack(alignment: .leading, spacing: 10) {
             //水平头像/昵称/关注按钮
             HStack(spacing: 5) {
                 //显示头像
@@ -43,7 +55,9 @@ struct PostCell: View {
                     Spacer()
                     
                     Button(action: {
-                        print("Click Following Button")
+                        //点关注按钮后更新Post的View
+                        post.isFollowed = true
+                        self.userData.update(post)
                     }) {
                         Text("关注")
                             .font(.system(size: 14))
@@ -75,16 +89,28 @@ struct PostCell: View {
                                     text: post.commentCountText,
                                     color: .black)
                 {
-                    print("Click Comment Button")
+                    self.presentComment = true //点击后出现CommentInputView
                 }
+                //modalPresentationStyle 由下至上显示页面，可以向下拖拽消失
+                .sheet(isPresented: $presentComment, content: {
+                    CommentInputView(post: post).environmentObject(self.userData)
+                })
                 
                 Spacer()
                 
-                PostCellToBarButton(image: "heart",
+                PostCellToBarButton(image: post.isLiked ? "heart.fill" : "heart",
                                     text: post.likeCountText,
-                                    color: .black)
+                                    color: post.isLiked ? .red : .black)
                 {
-                    print("Click Like Button")
+                    if post.isLiked {
+                        post.isLiked = false
+                        post.likeCount -= 1
+                        
+                    }else {
+                        post.isLiked = true
+                        post.likeCount += 1
+                    }
+                    self.userData.update(post)
                 }
                 Spacer()
             }
@@ -94,14 +120,17 @@ struct PostCell: View {
                 .frame(height: 10)
                 .foregroundColor(Color(red: 238 / 255, green: 238 / 255, blue: 238 / 255))
         }
-        .padding(.horizontal, 10) //设置VStack和屏幕两边的间距为15
-        .padding(.top, 10) //添加上部间距
+        .padding(.horizontal, 15) //设置VStack和屏幕两边的间距为15
+        .padding(.top, 15) //添加上部间距
     }
 }
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell(post: postList.list[7])
+            let userData = UserData()
+        return PostCell(post: userData.recommandPostList.list[7]).environmentObject(userData)
+
+        
         
     }
 }

@@ -11,7 +11,7 @@ private let kButtonHeight:CGFloat = 24
 private let kButtonBetweenWidth:CGFloat = UIScreen.main.bounds.width * 0.5
 
 struct HomeNavigationBar: View {
-    @State var leftPercent: CGFloat //0 for Left, 1 for Right //属性可更改
+    @Binding var leftPercent: CGFloat //0 for Left, 1 for Right //定义绑定属性，可更改，每次更改的时候View也会更新
     
     var body: some View {
         //添加左右两边拍照和新建按钮
@@ -72,7 +72,7 @@ struct HomeNavigationBar: View {
     //            }
     //            .frame(height: 60)
             }
-            .frame(width: kButtonBetweenWidth)
+            .frame(width: UIScreen.main.bounds.width * 0.5)
             Spacer()
             //新建按钮
             Button(action:  {
@@ -95,6 +95,6 @@ struct HomeNavigationBar: View {
 
 struct HomeNavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        HomeNavigationBar(leftPercent: 0)
+        HomeNavigationBar(leftPercent: .constant(0))
     }
 }
