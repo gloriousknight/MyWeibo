@@ -4,9 +4,11 @@
 //
 //  Created by BaronZhang on 2020/9/18.
 //
-// 解析JSON数据
+// 解析JSON数据,加载网络图片
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 ///定义新结构体PostList，与JSON数据外层key/value对应
 struct PostList: Codable {
     var list: [Post]
@@ -29,11 +31,16 @@ struct Post: Codable, Identifiable{
 
     
 }
+
+extension Post: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 ///将与View相关的属性拓展出来
 extension Post {
-    var avatarImage: Image {
-        return loadImage(name: avatar)
-    }
+    var avatarImage: WebImage { loadImage(name: avatar) }
     
     /**
      设置评论按钮的显示格式
@@ -81,6 +88,7 @@ func loadPostListData(_ fileName: String) -> PostList {
 }
 
 
-func loadImage(name:String) -> Image {
-    return Image(uiImage: UIImage(named: name)!)
+func loadImage(name:String) -> WebImage {
+    WebImage(url: URL(string: NetworkAPIBaseURL + name))
+        .placeholder { Color.gray } //显示占位图，灰色
 }

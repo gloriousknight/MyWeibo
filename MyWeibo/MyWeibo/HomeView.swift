@@ -12,11 +12,6 @@ import SwiftUI
 
 struct HomeView: View {
     @State var leftPercent: CGFloat = 1 //@State属性通常是这个View自己用，或者传递给这个View的子View，如果需要传递给子View，子View中的定义就要换成@Binding，这两个属性就绑定到了一起。@Binding见 HomeNavigationBar.swift和HScrollView.swift
-    
-    init() {
-        UITableView.appearance().separatorStyle = .none
-        UITableViewCell.appearance().selectionStyle = .none
-    }
     var body: some View {
             NavigationView {
                 GeometryReader { geometry in
@@ -29,9 +24,10 @@ struct HomeView: View {
                                 .frame(width: UIScreen.main.bounds.width)
                         }
                     }
+                    .edgesIgnoringSafeArea(.bottom)
                 }
                 
-                //添加左右滑动的ScrollView
+                //添加左右滑动的ScrollView，忽略安全区域
                 .edgesIgnoringSafeArea(.bottom)
                 .navigationBarItems(leading: HomeNavigationBar(leftPercent: $leftPercent)) //将首页的属性leftPercent与HomeNavigationBar的属性绑定到一起
                 .navigationBarTitle("首页", displayMode: .inline)
@@ -45,6 +41,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .previewDevice("iPhone X")
-            .environmentObject(UserData())
+            .environmentObject(UserData.testData)
     }
 }

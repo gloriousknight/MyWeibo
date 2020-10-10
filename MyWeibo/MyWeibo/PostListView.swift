@@ -7,7 +7,7 @@
 ///显示微博列表
 import SwiftUI
 
-struct PostListView: View {
+struct PostListViewOld: View {
     let category: PostListCategory
 //   已经修改为环境对象
 //    var postList: PostList {
@@ -40,7 +40,7 @@ struct PostListView: View {
     }
 }
 
-struct PostListView_Previews: PreviewProvider {
+struct PostListViewOld_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             PostListView(category: .recommand)
@@ -49,7 +49,7 @@ struct PostListView_Previews: PreviewProvider {
 //                .navigationBarTitle("Title")
 //                .navigationBarHidden(true)
         }
-        .environmentObject(UserData())
+        .environmentObject(UserData.testData)
         
     }
 }

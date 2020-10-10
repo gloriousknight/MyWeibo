@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 //定义域名路径
-private let NetworkAPIBaseURL = "https://github.com/gloriousknight/MyWeibo/raw/master/MyWeibo/MyWeibo/Resources/"
+let NetworkAPIBaseURL = "https://github.com/gloriousknight/MyWeibo/raw/master/MyWeibo/MyWeibo/Resources/"
 //定义网络请求返回值类型
 typealias NetworkRequestResult = Result<Data, Error>
 //定义网络请求回调类型
