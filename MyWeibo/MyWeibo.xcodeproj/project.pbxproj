@@ -21,6 +21,7 @@
 		DE7759252531A4540084EEDA /* OriginalButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7759242531A4540084EEDA /* OriginalButtonStyle.swift */; };
 		DEAE837A2521DE32000D5641 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE83792521DE32000D5641 /* CommentInputView.swift */; };
 		DEAE837D2521E59C000D5641 /* CommentTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAE837C2521E59C000D5641 /* CommentTextView.swift */; };
+		DEC4B80A25333F6300886263 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B80925333F6300886263 /* Test.swift */; };
 		DEC8ED40251379E5001BEED0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8ED3F251379E5001BEED0 /* PostCell.swift */; };
 		DEC8EE562513876A001BEED0 /* PostListData_recommend_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EE032513876A001BEED0 /* PostListData_recommend_1.json */; };
 		DEC8EE792513876B001BEED0 /* PostListData_hot_1.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EE262513876A001BEED0 /* PostListData_hot_1.json */; };
@@ -51,6 +52,7 @@
 		DE7759242531A4540084EEDA /* OriginalButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalButtonStyle.swift; sourceTree = "<group>"; };
 		DEAE83792521DE32000D5641 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		DEAE837C2521E59C000D5641 /* CommentTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextView.swift; sourceTree = "<group>"; };
+		DEC4B80925333F6300886263 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		DEC8ED3F251379E5001BEED0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		DEC8EE032513876A001BEED0 /* PostListData_recommend_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostListData_recommend_1.json; sourceTree = "<group>"; };
 		DEC8EE262513876A001BEED0 /* PostListData_hot_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostListData_hot_1.json; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				DE57E8A72514C195005C51C6 /* PostImageCell.swift */,
 				DE57E8A42514ABE6005C51C6 /* PostListView.swift */,
 				DE77592125319C110084EEDA /* PostListViewBBSwift.swift */,
+				DEC4B80925333F6300886263 /* Test.swift */,
 				DE6D0576252700150079A211 /* KeyBoardResponder.swift */,
 				DECC9130251DBBB300FE01ED /* HScrollViewController.swift */,
 				DE08658725174DF000D71656 /* HomeNavigationBar.swift */,
@@ -297,6 +300,7 @@
 				DEAE837A2521DE32000D5641 /* CommentInputView.swift in Sources */,
 				DECC9131251DBBB300FE01ED /* HScrollViewController.swift in Sources */,
 				DE77592225319C110084EEDA /* PostListViewBBSwift.swift in Sources */,
+				DEC4B80A25333F6300886263 /* Test.swift in Sources */,
 				DE0865902517632300D71656 /* HomeView.swift in Sources */,
 				DE0865842517343000D71656 /* PostDetailView.swift in Sources */,
 				DEC8EE9725138A2A001BEED0 /* PostVIPBadge.swift in Sources */,

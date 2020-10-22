@@ -91,13 +91,13 @@
 				DE7758C42529C2510084EEDA /* NetworkManager.swift */,
 				DE7758A42529A4EB0084EEDA /* AppDelegate.swift */,
 				DE7758A62529A4EB0084EEDA /* SceneDelegate.swift */,
+				DE7758B22529A4EC0084EEDA /* Info.plist */,
 				DE7758A82529A4EB0084EEDA /* ContentView.swift */,
 				DE7758C12529BE6D0084EEDA /* AlamofireOpration.swift */,
 				DE7758C8252B334B0084EEDA /* NetworkAPI.swift */,
 				DE7758B92529A5050084EEDA /* Post.swift */,
 				DE7758AA2529A4EC0084EEDA /* Assets.xcassets */,
 				DE7758AF2529A4EC0084EEDA /* LaunchScreen.storyboard */,
-				DE7758B22529A4EC0084EEDA /* Info.plist */,
 				DE7758AC2529A4EC0084EEDA /* Preview Content */,
 			);
 			path = NetworkDemo;
